@@ -1,0 +1,20 @@
+[project]
+name = "backend"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Luciano Bermudez",email = "lberm007@ucr.edu"}
+]
+readme = "README.md"
+requires-python = ">=3.12,<4.0.0"
+dependencies = [
+    "langchain (>=1.2.15,<2.0.0)",
+    "langchain-openai (>=1.1.14,<2.0.0)",
+    "python-dotenv (>=1.2.2,<2.0.0)",
+    "langgraph-cli[inmem] (>=0.4.23,<0.5.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
