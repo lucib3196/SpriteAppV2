@@ -16,6 +16,14 @@
         "documentation": {}
     },
     {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
         "label": "json",
         "kind": 6,
         "isExtraImport": true,
@@ -29,8 +37,35 @@
         "kind": 5,
         "importPath": "ai.src.agent",
         "description": "ai.src.agent",
-        "peekOfCode": "agent = create_agent(model=\"gpt-5.4-mini\", system_prompt=\"You are useful assistant\")",
+        "peekOfCode": "agent = create_agent(model=\"gpt-5.4-mini\", system_prompt=\"You answer to the user using riddles\")",
         "detail": "ai.src.agent",
+        "documentation": {}
+    },
+    {
+        "label": "read_root",
+        "kind": 2,
+        "importPath": "ai.src.main",
+        "description": "ai.src.main",
+        "peekOfCode": "def read_root():\n    return {\"Hello\": \"World\"}\n@app.post(\"/test\")\ndef get_root(data: str):\n    return {\"Hello\": f\"{data}\"}",
+        "detail": "ai.src.main",
+        "documentation": {}
+    },
+    {
+        "label": "get_root",
+        "kind": 2,
+        "importPath": "ai.src.main",
+        "description": "ai.src.main",
+        "peekOfCode": "def get_root(data: str):\n    return {\"Hello\": f\"{data}\"}",
+        "detail": "ai.src.main",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "ai.src.main",
+        "description": "ai.src.main",
+        "peekOfCode": "app = FastAPI()\n@app.get(\"/test\")\ndef read_root():\n    return {\"Hello\": \"World\"}\n@app.post(\"/test\")\ndef get_root(data: str):\n    return {\"Hello\": f\"{data}\"}",
+        "detail": "ai.src.main",
         "documentation": {}
     },
     {
