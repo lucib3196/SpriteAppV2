@@ -1,58 +1,35 @@
 # syntax=docker/dockerfile:1
 
-# Comments are provided throughout this file to help you get started.
-# If you need more help, visit the Dockerfile reference guide at
-# https://docs.docker.com/go/dockerfile-reference/
-
-# Want to help us make this template better? Share your feedback here: https://forms.gle/ybq9Krt8jtBL3iCk7
-
 ARG PYTHON_VERSION=3.13.7
-FROM python:${PYTHON_VERSION}-slim as backend
+FROM python:${PYTHON_VERSION}-slim
 
-# Prevent Python from writing pyc files and buffer logs
 ENV PYTHONDONTWRITEBYTECODE=1 \
-    PYTHONUNBUFFERED=1
+    PYTHONUNBUFFERED=1 \
+    UV_COMPILE_BYTECODE=1
 
-
-    # Create a non-privileged user that the app will run under.
-# See https://docs.docker.com/go/dockerfile-user-best-practices/
 ARG UID=10001
 
 RUN adduser \
     --disabled-password \
     --gecos "" \
-    --home "/home/appuser" \
+    --home /home/appuser \
     --uid "${UID}" \
-    appuser \
-    && mkdir -p /home/appuser \
-    && chown -R appuser:appuser /home/appuser
+    appuser
 
-# Install system dependencies for psycopg2 and other build tools
-RUN apt-get update && apt-get install -y \
-    gcc \
-    libpq-dev \
-    python3-dev \
-    && rm -rf /var/lib/apt/lists/*
+RUN pip install --no-cache-dir uv
 
 WORKDIR /app
 
-# Preserve monorepo directory relationships.
-COPY packages/sprite_core/ packages/sprite_core/
-COPY api/ api/
+# Preserve the same relative paths used by api/pyproject.toml.
+COPY --chown=appuser:appuser packages/sprite_core/ packages/sprite_core/
+COPY --chown=appuser:appuser api/ api/
+
 WORKDIR /app/api
 
+RUN uv sync --frozen --no-dev
 
+USER appuser
 
-RUN pip install --no-cache-dir uv
-COPY pyproject.toml uv.lock* ./
-
-RUN uv sync --frozen
-# Copy the source code into the container.
-COPY . .
-
-# Expose the port that the application listens on.
 EXPOSE 8000
 
-# Run the application.
-CMD ["uvicorn", "src.main:app","--reload", "--host", "0.0.0.0", "--port", "8000","--forwarded-allow-ips", "*"]
-
+CMD ["sh", "-c", "exec uv run uvicorn src.main:app --host 0.0.0.0 --port ${PORT:-8000} --forwarded-allow-ips '*'"]
