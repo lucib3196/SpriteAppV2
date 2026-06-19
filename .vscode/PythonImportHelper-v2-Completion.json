@@ -1,5 +1,65 @@
 [
     {
+        "label": "runpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "runpy",
+        "description": "runpy",
+        "detail": "runpy",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "site",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "site",
+        "description": "site",
+        "detail": "site",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
         "label": "create_agent",
         "importPath": "langchain.agents",
         "description": "langchain.agents",
@@ -16,11 +76,76 @@
         "documentation": {}
     },
     {
+        "label": "dataclass",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "tool",
+        "importPath": "langchain.tools",
+        "description": "langchain.tools",
+        "isExtraImport": true,
+        "detail": "langchain.tools",
+        "documentation": {}
+    },
+    {
+        "label": "ToolRuntime",
+        "importPath": "langchain.tools",
+        "description": "langchain.tools",
+        "isExtraImport": true,
+        "detail": "langchain.tools",
+        "documentation": {}
+    },
+    {
+        "label": "create_engine",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "text",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "print_hello",
+        "importPath": "shared",
+        "description": "shared",
+        "isExtraImport": true,
+        "detail": "shared",
+        "documentation": {}
+    },
+    {
+        "label": "get_message",
+        "importPath": "shared",
+        "description": "shared",
+        "isExtraImport": true,
+        "detail": "shared",
+        "documentation": {}
+    },
+    {
         "label": "FastAPI",
         "importPath": "fastapi",
         "description": "fastapi",
         "isExtraImport": true,
         "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "uvicorn",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "uvicorn",
+        "description": "uvicorn",
+        "detail": "uvicorn",
         "documentation": {}
     },
     {
@@ -33,75 +158,390 @@
         "documentation": {}
     },
     {
+        "label": "bin_dir",
+        "kind": 5,
+        "importPath": "agents..venv.bin.activate_this",
+        "description": "agents..venv.bin.activate_this",
+        "peekOfCode": "bin_dir = os.path.dirname(abs_file)\nbase = bin_dir[: -len(\"bin\") - 1]  # strip away the bin part from the __file__, plus the path separator\n# prepend bin to PATH (this file is inside the bin directory)\nos.environ[\"PATH\"] = os.pathsep.join([bin_dir, *os.environ.get(\"PATH\", \"\").split(os.pathsep)])\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"agents\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"../lib/python3.12/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))",
+        "detail": "agents..venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "base",
+        "kind": 5,
+        "importPath": "agents..venv.bin.activate_this",
+        "description": "agents..venv.bin.activate_this",
+        "peekOfCode": "base = bin_dir[: -len(\"bin\") - 1]  # strip away the bin part from the __file__, plus the path separator\n# prepend bin to PATH (this file is inside the bin directory)\nos.environ[\"PATH\"] = os.pathsep.join([bin_dir, *os.environ.get(\"PATH\", \"\").split(os.pathsep)])\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"agents\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"../lib/python3.12/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path)",
+        "detail": "agents..venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"PATH\"]",
+        "kind": 5,
+        "importPath": "agents..venv.bin.activate_this",
+        "description": "agents..venv.bin.activate_this",
+        "peekOfCode": "os.environ[\"PATH\"] = os.pathsep.join([bin_dir, *os.environ.get(\"PATH\", \"\").split(os.pathsep)])\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"agents\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"../lib/python3.12/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix",
+        "detail": "agents..venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"VIRTUAL_ENV\"]",
+        "kind": 5,
+        "importPath": "agents..venv.bin.activate_this",
+        "description": "agents..venv.bin.activate_this",
+        "peekOfCode": "os.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"agents\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"../lib/python3.12/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "agents..venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"VIRTUAL_ENV_PROMPT\"]",
+        "kind": 5,
+        "importPath": "agents..venv.bin.activate_this",
+        "description": "agents..venv.bin.activate_this",
+        "peekOfCode": "os.environ[\"VIRTUAL_ENV_PROMPT\"] = \"agents\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"../lib/python3.12/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "agents..venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "prev_length",
+        "kind": 5,
+        "importPath": "agents..venv.bin.activate_this",
+        "description": "agents..venv.bin.activate_this",
+        "peekOfCode": "prev_length = len(sys.path)\nfor lib in \"../lib/python3.12/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "agents..venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "sys.path[:]",
+        "kind": 5,
+        "importPath": "agents..venv.bin.activate_this",
+        "description": "agents..venv.bin.activate_this",
+        "peekOfCode": "sys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "agents..venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "sys.real_prefix",
+        "kind": 5,
+        "importPath": "agents..venv.bin.activate_this",
+        "description": "agents..venv.bin.activate_this",
+        "peekOfCode": "sys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "agents..venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "sys.prefix",
+        "kind": 5,
+        "importPath": "agents..venv.bin.activate_this",
+        "description": "agents..venv.bin.activate_this",
+        "peekOfCode": "sys.prefix = base",
+        "detail": "agents..venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "UserContext",
+        "kind": 6,
+        "importPath": "agents.src.agent",
+        "description": "agents.src.agent",
+        "peekOfCode": "class UserContext:\n    user_id: str\nclass UserRepository:\n    def __init__(self, connection_string: str):\n        self.engine = create_engine(connection_string)\n    def get_user(self, user_id: str):\n        with self.engine.connect() as conn:\n            result = (\n                conn.execute(\n                    text(\"\"\"",
+        "detail": "agents.src.agent",
+        "documentation": {}
+    },
+    {
+        "label": "UserRepository",
+        "kind": 6,
+        "importPath": "agents.src.agent",
+        "description": "agents.src.agent",
+        "peekOfCode": "class UserRepository:\n    def __init__(self, connection_string: str):\n        self.engine = create_engine(connection_string)\n    def get_user(self, user_id: str):\n        with self.engine.connect() as conn:\n            result = (\n                conn.execute(\n                    text(\"\"\"\n                    SELECT\n                        user_id,",
+        "detail": "agents.src.agent",
+        "documentation": {}
+    },
+    {
+        "label": "get_account_info",
+        "kind": 2,
+        "importPath": "agents.src.agent",
+        "description": "agents.src.agent",
+        "peekOfCode": "def get_account_info(runtime: ToolRuntime[UserContext]) -> str:\n    \"\"\"Get user account info\"\"\"\n    user = repo.get_user(runtime.context.user_id)\n    if not user:\n        return \"User not found\"\n    return (\n        f\"Account holder: {user['name']}\\n\"\n        f\"Type: {user['account_type']}\\n\"\n        f\"Balance: ${user['balance']}\"\n    )",
+        "detail": "agents.src.agent",
+        "documentation": {}
+    },
+    {
+        "label": "DATABASE_URL",
+        "kind": 5,
+        "importPath": "agents.src.agent",
+        "description": "agents.src.agent",
+        "peekOfCode": "DATABASE_URL = \"postgresql://postgres:password@db:5432/sprite_db\"\nrepo = UserRepository(DATABASE_URL)\n@tool\ndef get_account_info(runtime: ToolRuntime[UserContext]) -> str:\n    \"\"\"Get user account info\"\"\"\n    user = repo.get_user(runtime.context.user_id)\n    if not user:\n        return \"User not found\"\n    return (\n        f\"Account holder: {user['name']}\\n\"",
+        "detail": "agents.src.agent",
+        "documentation": {}
+    },
+    {
+        "label": "repo",
+        "kind": 5,
+        "importPath": "agents.src.agent",
+        "description": "agents.src.agent",
+        "peekOfCode": "repo = UserRepository(DATABASE_URL)\n@tool\ndef get_account_info(runtime: ToolRuntime[UserContext]) -> str:\n    \"\"\"Get user account info\"\"\"\n    user = repo.get_user(runtime.context.user_id)\n    if not user:\n        return \"User not found\"\n    return (\n        f\"Account holder: {user['name']}\\n\"\n        f\"Type: {user['account_type']}\\n\"",
+        "detail": "agents.src.agent",
+        "documentation": {}
+    },
+    {
         "label": "agent",
         "kind": 5,
-        "importPath": "ai.src.agent",
-        "description": "ai.src.agent",
-        "peekOfCode": "agent = create_agent(model=\"gpt-5.4-mini\", system_prompt=\"You answer to the user using riddles\")",
-        "detail": "ai.src.agent",
+        "importPath": "agents.src.agent",
+        "description": "agents.src.agent",
+        "peekOfCode": "agent = create_agent(\n    model=\"gpt-5.4-mini\",\n    tools=[get_account_info],\n    context_schema=UserContext,\n)",
+        "detail": "agents.src.agent",
         "documentation": {}
     },
     {
-        "label": "read_root",
+        "label": "main",
         "kind": 2,
-        "importPath": "ai.src.main",
-        "description": "ai.src.main",
-        "peekOfCode": "def read_root():\n    return {\"Hello\": \"World\"}\n@app.post(\"/test\")\ndef get_root(data: str):\n    return {\"Hello\": f\"{data}\"}",
-        "detail": "ai.src.main",
+        "importPath": "agents.main",
+        "description": "agents.main",
+        "peekOfCode": "def main():\n    print(\"Hello from agents!\")\nif __name__ == \"__main__\":\n    main()",
+        "detail": "agents.main",
         "documentation": {}
     },
     {
-        "label": "get_root",
+        "label": "bin_dir",
+        "kind": 5,
+        "importPath": "backend..venv.bin.activate_this",
+        "description": "backend..venv.bin.activate_this",
+        "peekOfCode": "bin_dir = os.path.dirname(abs_file)\nbase = bin_dir[: -len(\"bin\") - 1]  # strip away the bin part from the __file__, plus the path separator\n# prepend bin to PATH (this file is inside the bin directory)\nos.environ[\"PATH\"] = os.pathsep.join([bin_dir, *os.environ.get(\"PATH\", \"\").split(os.pathsep)])\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"backend\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"../lib/python3.12/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))",
+        "detail": "backend..venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "base",
+        "kind": 5,
+        "importPath": "backend..venv.bin.activate_this",
+        "description": "backend..venv.bin.activate_this",
+        "peekOfCode": "base = bin_dir[: -len(\"bin\") - 1]  # strip away the bin part from the __file__, plus the path separator\n# prepend bin to PATH (this file is inside the bin directory)\nos.environ[\"PATH\"] = os.pathsep.join([bin_dir, *os.environ.get(\"PATH\", \"\").split(os.pathsep)])\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"backend\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"../lib/python3.12/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path)",
+        "detail": "backend..venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"PATH\"]",
+        "kind": 5,
+        "importPath": "backend..venv.bin.activate_this",
+        "description": "backend..venv.bin.activate_this",
+        "peekOfCode": "os.environ[\"PATH\"] = os.pathsep.join([bin_dir, *os.environ.get(\"PATH\", \"\").split(os.pathsep)])\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"backend\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"../lib/python3.12/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix",
+        "detail": "backend..venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"VIRTUAL_ENV\"]",
+        "kind": 5,
+        "importPath": "backend..venv.bin.activate_this",
+        "description": "backend..venv.bin.activate_this",
+        "peekOfCode": "os.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"backend\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"../lib/python3.12/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "backend..venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"VIRTUAL_ENV_PROMPT\"]",
+        "kind": 5,
+        "importPath": "backend..venv.bin.activate_this",
+        "description": "backend..venv.bin.activate_this",
+        "peekOfCode": "os.environ[\"VIRTUAL_ENV_PROMPT\"] = \"backend\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"../lib/python3.12/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "backend..venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "prev_length",
+        "kind": 5,
+        "importPath": "backend..venv.bin.activate_this",
+        "description": "backend..venv.bin.activate_this",
+        "peekOfCode": "prev_length = len(sys.path)\nfor lib in \"../lib/python3.12/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "backend..venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "sys.path[:]",
+        "kind": 5,
+        "importPath": "backend..venv.bin.activate_this",
+        "description": "backend..venv.bin.activate_this",
+        "peekOfCode": "sys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "backend..venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "sys.real_prefix",
+        "kind": 5,
+        "importPath": "backend..venv.bin.activate_this",
+        "description": "backend..venv.bin.activate_this",
+        "peekOfCode": "sys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "backend..venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "sys.prefix",
+        "kind": 5,
+        "importPath": "backend..venv.bin.activate_this",
+        "description": "backend..venv.bin.activate_this",
+        "peekOfCode": "sys.prefix = base",
+        "detail": "backend..venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "root",
         "kind": 2,
-        "importPath": "ai.src.main",
-        "description": "ai.src.main",
-        "peekOfCode": "def get_root(data: str):\n    return {\"Hello\": f\"{data}\"}",
-        "detail": "ai.src.main",
+        "importPath": "backend.src.main",
+        "description": "backend.src.main",
+        "peekOfCode": "def root():\n    return {\n        \"status\": \"ok\",\n        \"message\": get_message(),\n    }\n@app.get(\"/health\")\ndef health():\n    return {\"healthy\": True}\nif __name__ == \"__main__\":\n    uvicorn.run(",
+        "detail": "backend.src.main",
+        "documentation": {}
+    },
+    {
+        "label": "health",
+        "kind": 2,
+        "importPath": "backend.src.main",
+        "description": "backend.src.main",
+        "peekOfCode": "def health():\n    return {\"healthy\": True}\nif __name__ == \"__main__\":\n    uvicorn.run(\n        \"src.main:app\",\n        host=\"0.0.0.0\",\n        port=8000,\n        reload=True,\n    )",
+        "detail": "backend.src.main",
         "documentation": {}
     },
     {
         "label": "app",
         "kind": 5,
-        "importPath": "ai.src.main",
-        "description": "ai.src.main",
-        "peekOfCode": "app = FastAPI()\n@app.get(\"/test\")\ndef read_root():\n    return {\"Hello\": \"World\"}\n@app.post(\"/test\")\ndef get_root(data: str):\n    return {\"Hello\": f\"{data}\"}",
-        "detail": "ai.src.main",
+        "importPath": "backend.src.main",
+        "description": "backend.src.main",
+        "peekOfCode": "app = FastAPI()\n@app.get(\"/\")\ndef root():\n    return {\n        \"status\": \"ok\",\n        \"message\": get_message(),\n    }\n@app.get(\"/health\")\ndef health():\n    return {\"healthy\": True}",
+        "detail": "backend.src.main",
         "documentation": {}
     },
     {
         "label": "_Known",
         "kind": 6,
-        "importPath": "sprite-app-v2.node_modules.flatted.python.flatted",
-        "description": "sprite-app-v2.node_modules.flatted.python.flatted",
+        "importPath": "frontend.node_modules.flatted.python.flatted",
+        "description": "frontend.node_modules.flatted.python.flatted",
         "peekOfCode": "class _Known:\n    def __init__(self):\n        self.key = []\n        self.value = []\nclass _String:\n    def __init__(self, value):\n        self.value = value\ndef _array_keys(value):\n    for i in range(len(value)):\n        yield i",
-        "detail": "sprite-app-v2.node_modules.flatted.python.flatted",
+        "detail": "frontend.node_modules.flatted.python.flatted",
         "documentation": {}
     },
     {
         "label": "_String",
         "kind": 6,
-        "importPath": "sprite-app-v2.node_modules.flatted.python.flatted",
-        "description": "sprite-app-v2.node_modules.flatted.python.flatted",
+        "importPath": "frontend.node_modules.flatted.python.flatted",
+        "description": "frontend.node_modules.flatted.python.flatted",
         "peekOfCode": "class _String:\n    def __init__(self, value):\n        self.value = value\ndef _array_keys(value):\n    for i in range(len(value)):\n        yield i\ndef _object_keys(value):\n    for key in value:\n        yield key\ndef _is_array(value):",
-        "detail": "sprite-app-v2.node_modules.flatted.python.flatted",
+        "detail": "frontend.node_modules.flatted.python.flatted",
         "documentation": {}
     },
     {
         "label": "parse",
         "kind": 2,
-        "importPath": "sprite-app-v2.node_modules.flatted.python.flatted",
-        "description": "sprite-app-v2.node_modules.flatted.python.flatted",
+        "importPath": "frontend.node_modules.flatted.python.flatted",
+        "description": "frontend.node_modules.flatted.python.flatted",
         "peekOfCode": "def parse(value, *args, **kwargs):\n    json = _json.loads(value, *args, **kwargs)\n    wrapped = []\n    for value in json:\n        wrapped.append(_wrap(value))\n    input = []\n    for value in wrapped:\n        if isinstance(value, _String):\n            input.append(value.value)\n        else:",
-        "detail": "sprite-app-v2.node_modules.flatted.python.flatted",
+        "detail": "frontend.node_modules.flatted.python.flatted",
         "documentation": {}
     },
     {
         "label": "stringify",
         "kind": 2,
-        "importPath": "sprite-app-v2.node_modules.flatted.python.flatted",
-        "description": "sprite-app-v2.node_modules.flatted.python.flatted",
+        "importPath": "frontend.node_modules.flatted.python.flatted",
+        "description": "frontend.node_modules.flatted.python.flatted",
         "peekOfCode": "def stringify(value, *args, **kwargs):\n    known = _Known()\n    input = []\n    output = []\n    i = int(_index(known, input, value))\n    while i < len(input):\n        output.append(_transform(known, input, input[i]))\n        i += 1\n    return _json.dumps(output, *args, **kwargs)",
-        "detail": "sprite-app-v2.node_modules.flatted.python.flatted",
+        "detail": "frontend.node_modules.flatted.python.flatted",
+        "documentation": {}
+    },
+    {
+        "label": "bin_dir",
+        "kind": 5,
+        "importPath": "shared..venv.bin.activate_this",
+        "description": "shared..venv.bin.activate_this",
+        "peekOfCode": "bin_dir = os.path.dirname(abs_file)\nbase = bin_dir[: -len(\"bin\") - 1]  # strip away the bin part from the __file__, plus the path separator\n# prepend bin to PATH (this file is inside the bin directory)\nos.environ[\"PATH\"] = os.pathsep.join([bin_dir, *os.environ.get(\"PATH\", \"\").split(os.pathsep)])\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"shared\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"../lib/python3.12/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))",
+        "detail": "shared..venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "base",
+        "kind": 5,
+        "importPath": "shared..venv.bin.activate_this",
+        "description": "shared..venv.bin.activate_this",
+        "peekOfCode": "base = bin_dir[: -len(\"bin\") - 1]  # strip away the bin part from the __file__, plus the path separator\n# prepend bin to PATH (this file is inside the bin directory)\nos.environ[\"PATH\"] = os.pathsep.join([bin_dir, *os.environ.get(\"PATH\", \"\").split(os.pathsep)])\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"shared\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"../lib/python3.12/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path)",
+        "detail": "shared..venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"PATH\"]",
+        "kind": 5,
+        "importPath": "shared..venv.bin.activate_this",
+        "description": "shared..venv.bin.activate_this",
+        "peekOfCode": "os.environ[\"PATH\"] = os.pathsep.join([bin_dir, *os.environ.get(\"PATH\", \"\").split(os.pathsep)])\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"shared\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"../lib/python3.12/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix",
+        "detail": "shared..venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"VIRTUAL_ENV\"]",
+        "kind": 5,
+        "importPath": "shared..venv.bin.activate_this",
+        "description": "shared..venv.bin.activate_this",
+        "peekOfCode": "os.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"shared\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"../lib/python3.12/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "shared..venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"VIRTUAL_ENV_PROMPT\"]",
+        "kind": 5,
+        "importPath": "shared..venv.bin.activate_this",
+        "description": "shared..venv.bin.activate_this",
+        "peekOfCode": "os.environ[\"VIRTUAL_ENV_PROMPT\"] = \"shared\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"../lib/python3.12/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "shared..venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "prev_length",
+        "kind": 5,
+        "importPath": "shared..venv.bin.activate_this",
+        "description": "shared..venv.bin.activate_this",
+        "peekOfCode": "prev_length = len(sys.path)\nfor lib in \"../lib/python3.12/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "shared..venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "sys.path[:]",
+        "kind": 5,
+        "importPath": "shared..venv.bin.activate_this",
+        "description": "shared..venv.bin.activate_this",
+        "peekOfCode": "sys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "shared..venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "sys.real_prefix",
+        "kind": 5,
+        "importPath": "shared..venv.bin.activate_this",
+        "description": "shared..venv.bin.activate_this",
+        "peekOfCode": "sys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "shared..venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "sys.prefix",
+        "kind": 5,
+        "importPath": "shared..venv.bin.activate_this",
+        "description": "shared..venv.bin.activate_this",
+        "peekOfCode": "sys.prefix = base",
+        "detail": "shared..venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "print_hello",
+        "kind": 2,
+        "importPath": "shared.src.shared.main",
+        "description": "shared.src.shared.main",
+        "peekOfCode": "def print_hello():\n    return print(\"Hello from shared\")\ndef get_message() -> str:\n    return \"Hello from shared package!\"",
+        "detail": "shared.src.shared.main",
+        "documentation": {}
+    },
+    {
+        "label": "get_message",
+        "kind": 2,
+        "importPath": "shared.src.shared.main",
+        "description": "shared.src.shared.main",
+        "peekOfCode": "def get_message() -> str:\n    return \"Hello from shared package!\"",
+        "detail": "shared.src.shared.main",
         "documentation": {}
     }
 ]

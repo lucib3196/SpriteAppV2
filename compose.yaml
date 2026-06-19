@@ -1,0 +1,24 @@
+services:
+  langgraph:
+    build:
+        context: ./agents
+    ports:
+      - "2024:2024"
+
+    volumes:
+      - ./agents:/app # mount project allows for reloading
+
+  db:
+    image: postgres:18
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: sprite_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql
+volumes:
+  postgres_data:

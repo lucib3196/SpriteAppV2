@@ -1,12 +1,27 @@
 from fastapi import FastAPI
+from shared import get_message
+import uvicorn
 
 app = FastAPI()
 
-@app.get("/test")
-def read_root():
-    return {"Hello": "World"}
+
+@app.get("/")
+def root():
+    return {
+        "status": "ok",
+        "message": get_message(),
+    }
 
 
-@app.post("/test")
-def get_root(data: str):
-    return {"Hello": f"{data}"}
+@app.get("/health")
+def health():
+    return {"healthy": True}
+
+
+if __name__ == "__main__":
+    uvicorn.run(
+        "src.main:app",
+        host="0.0.0.0",
+        port=8000,
+        reload=True,
+    )
