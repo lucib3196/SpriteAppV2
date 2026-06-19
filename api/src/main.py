@@ -1,6 +1,7 @@
 from fastapi import FastAPI
-from shared import get_message
+from sprite_core.main import get_message
 import uvicorn
+
 
 app = FastAPI()
 
