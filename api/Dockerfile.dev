@@ -15,6 +15,11 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 
 WORKDIR /app
 
+# Preserve monorepo directory relationships.
+COPY packages/sprite_core/ packages/sprite_core/
+COPY api/ api/
+WORKDIR /app/api
+
 # Create a non-privileged user that the app will run under.
 # See https://docs.docker.com/go/dockerfile-user-best-practices/
 ARG UID=10001
@@ -46,9 +51,9 @@ RUN apt-get update && apt-get install -y \
 
 
 RUN pip install --no-cache-dir uv
-COPY ./api/pyproject.toml uv.lock* ./
+COPY ./pyproject.toml uv.lock* ./
 
-RUN uv sync
+RUN uv sync --frozen
 # Copy the source code into the container.
 COPY . .
 

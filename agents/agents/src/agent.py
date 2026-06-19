@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 from dataclasses import dataclass
 from langchain.tools import tool, ToolRuntime
 from sqlalchemy import create_engine, text
-from shared import print_hello
+from sprite_core.main import print_hello
 
 load_dotenv()
 

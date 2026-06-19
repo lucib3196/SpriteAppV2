@@ -11,9 +11,10 @@ dependencies = [
     "langgraph-cli[inmem]>=0.4.30",
     "psycopg2-binary>=2.9.12",
     "psycopg[binary]>=3.3.4",
-    "shared",
+    
     "sqlalchemy>=2.0.51",
 ]
 
 [tool.uv.sources]
-shared = { path = "../shared", editable = true }
+sprite-core = { path = "../packages/sprite_core", editable = true }
+

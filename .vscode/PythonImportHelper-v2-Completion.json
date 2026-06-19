@@ -117,18 +117,18 @@
     },
     {
         "label": "print_hello",
-        "importPath": "shared",
-        "description": "shared",
+        "importPath": "sprite_core.main",
+        "description": "sprite_core.main",
         "isExtraImport": true,
-        "detail": "shared",
+        "detail": "sprite_core.main",
         "documentation": {}
     },
     {
         "label": "get_message",
-        "importPath": "shared",
-        "description": "shared",
+        "importPath": "sprite_core.main",
+        "description": "sprite_core.main",
         "isExtraImport": true,
-        "detail": "shared",
+        "detail": "sprite_core.main",
         "documentation": {}
     },
     {
