@@ -9,7 +9,7 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     UV_PROJECT_ENVIRONMENT=/opt/venv \
     PATH="/opt/venv/bin:$PATH"
 
-    
+
 ARG UID=10001
 
 RUN adduser \
@@ -20,6 +20,10 @@ RUN adduser \
     appuser
 
 RUN pip install --no-cache-dir uv
+
+RUN mkdir -p /opt/venv /app \
+    && chown -R appuser:appuser /opt/venv /app
+
 
 WORKDIR /app
 
