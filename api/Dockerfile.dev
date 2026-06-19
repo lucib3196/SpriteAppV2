@@ -13,16 +13,11 @@ FROM python:${PYTHON_VERSION}-slim as backend
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1
 
-WORKDIR /app
 
-# Preserve monorepo directory relationships.
-COPY packages/sprite_core/ packages/sprite_core/
-COPY api/ api/
-WORKDIR /app/api
-
-# Create a non-privileged user that the app will run under.
+    # Create a non-privileged user that the app will run under.
 # See https://docs.docker.com/go/dockerfile-user-best-practices/
 ARG UID=10001
+
 RUN adduser \
     --disabled-password \
     --gecos "" \
@@ -32,16 +27,6 @@ RUN adduser \
     && mkdir -p /home/appuser \
     && chown -R appuser:appuser /home/appuser
 
-
-
-# Install system dependencies (e.g., for OpenCV)
-RUN apt-get update && apt-get install -y \
-    libgl1 \
-    libglib2.0-0 \
-    && rm -rf /var/lib/apt/lists/*
-
-
-
 # Install system dependencies for psycopg2 and other build tools
 RUN apt-get update && apt-get install -y \
     gcc \
@@ -49,9 +34,17 @@ RUN apt-get update && apt-get install -y \
     python3-dev \
     && rm -rf /var/lib/apt/lists/*
 
+WORKDIR /app
+
+# Preserve monorepo directory relationships.
+COPY packages/sprite_core/ packages/sprite_core/
+COPY api/ api/
+WORKDIR /app/api
+
+
 
 RUN pip install --no-cache-dir uv
-COPY ./pyproject.toml uv.lock* ./
+COPY pyproject.toml uv.lock* ./
 
 RUN uv sync --frozen
 # Copy the source code into the container.
