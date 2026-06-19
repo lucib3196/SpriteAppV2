@@ -241,55 +241,55 @@
     {
         "label": "UserContext",
         "kind": 6,
-        "importPath": "agents.agents.src.agent",
-        "description": "agents.agents.src.agent",
+        "importPath": "agents.src.agents.agent",
+        "description": "agents.src.agents.agent",
         "peekOfCode": "class UserContext:\n    user_id: str\nclass UserRepository:\n    def __init__(self, connection_string: str):\n        self.engine = create_engine(connection_string)\n    def get_user(self, user_id: str):\n        with self.engine.connect() as conn:\n            result = (\n                conn.execute(\n                    text(\"\"\"",
-        "detail": "agents.agents.src.agent",
+        "detail": "agents.src.agents.agent",
         "documentation": {}
     },
     {
         "label": "UserRepository",
         "kind": 6,
-        "importPath": "agents.agents.src.agent",
-        "description": "agents.agents.src.agent",
+        "importPath": "agents.src.agents.agent",
+        "description": "agents.src.agents.agent",
         "peekOfCode": "class UserRepository:\n    def __init__(self, connection_string: str):\n        self.engine = create_engine(connection_string)\n    def get_user(self, user_id: str):\n        with self.engine.connect() as conn:\n            result = (\n                conn.execute(\n                    text(\"\"\"\n                    SELECT\n                        user_id,",
-        "detail": "agents.agents.src.agent",
+        "detail": "agents.src.agents.agent",
         "documentation": {}
     },
     {
         "label": "get_account_info",
         "kind": 2,
-        "importPath": "agents.agents.src.agent",
-        "description": "agents.agents.src.agent",
+        "importPath": "agents.src.agents.agent",
+        "description": "agents.src.agents.agent",
         "peekOfCode": "def get_account_info(runtime: ToolRuntime[UserContext]) -> str:\n    \"\"\"Get user account info\"\"\"\n    user = repo.get_user(runtime.context.user_id)\n    if not user:\n        return \"User not found\"\n    return (\n        f\"Account holder: {user['name']}\\n\"\n        f\"Type: {user['account_type']}\\n\"\n        f\"Balance: ${user['balance']}\"\n    )",
-        "detail": "agents.agents.src.agent",
+        "detail": "agents.src.agents.agent",
         "documentation": {}
     },
     {
         "label": "DATABASE_URL",
         "kind": 5,
-        "importPath": "agents.agents.src.agent",
-        "description": "agents.agents.src.agent",
+        "importPath": "agents.src.agents.agent",
+        "description": "agents.src.agents.agent",
         "peekOfCode": "DATABASE_URL = \"postgresql://postgres:password@db:5432/sprite_db\"\nrepo = UserRepository(DATABASE_URL)\n@tool\ndef get_account_info(runtime: ToolRuntime[UserContext]) -> str:\n    \"\"\"Get user account info\"\"\"\n    user = repo.get_user(runtime.context.user_id)\n    if not user:\n        return \"User not found\"\n    return (\n        f\"Account holder: {user['name']}\\n\"",
-        "detail": "agents.agents.src.agent",
+        "detail": "agents.src.agents.agent",
         "documentation": {}
     },
     {
         "label": "repo",
         "kind": 5,
-        "importPath": "agents.agents.src.agent",
-        "description": "agents.agents.src.agent",
+        "importPath": "agents.src.agents.agent",
+        "description": "agents.src.agents.agent",
         "peekOfCode": "repo = UserRepository(DATABASE_URL)\n@tool\ndef get_account_info(runtime: ToolRuntime[UserContext]) -> str:\n    \"\"\"Get user account info\"\"\"\n    user = repo.get_user(runtime.context.user_id)\n    if not user:\n        return \"User not found\"\n    return (\n        f\"Account holder: {user['name']}\\n\"\n        f\"Type: {user['account_type']}\\n\"",
-        "detail": "agents.agents.src.agent",
+        "detail": "agents.src.agents.agent",
         "documentation": {}
     },
     {
         "label": "agent",
         "kind": 5,
-        "importPath": "agents.agents.src.agent",
-        "description": "agents.agents.src.agent",
+        "importPath": "agents.src.agents.agent",
+        "description": "agents.src.agents.agent",
         "peekOfCode": "agent = create_agent(\n    model=\"gpt-5.4-mini\",\n    tools=[get_account_info],\n    context_schema=UserContext,\n)",
-        "detail": "agents.agents.src.agent",
+        "detail": "agents.src.agents.agent",
         "documentation": {}
     },
     {
